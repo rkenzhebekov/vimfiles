@@ -15,7 +15,7 @@ Prerequisites: ruby, git.
 1. Move your existing configuration somewhere else:
    `mv ~/.vim* ~/.gvim* my_backup`
 2. Clone this repo into ".vim":
-   `git clone https://github.com/Arkham/vimfiles ~/.vim`
+   `git clone https://github.com/rkenzhebekov/vimfiles ~/.vim`
 3. Go into ".vim" and run "rake":
    `cd ~/.vim && rake`
 
