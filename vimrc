@@ -55,6 +55,7 @@ set noswapfile                    " and swap files
 " Style
 set background=dark
 silent! color gruvbox
+colorscheme PaperColor
 set number                        " line numbers are cool
 set relativenumber                " relative numbers are cooler
 set ruler                         " show the cursor position all the time
@@ -180,10 +181,12 @@ if has("autocmd")
   augroup END
 
   " disable numbers in terminal windows
-  augroup terminal_numbers
-    au!
-    autocmd TermOpen * setlocal nonumber norelativenumber
-  augroup END
+  if has('nvim')
+    augroup terminal_numbers
+      au!
+      autocmd TermOpen * setlocal nonumber norelativenumber
+    augroup END
+  endif
 
   " Run all formatters
   augroup fmt
@@ -296,7 +299,7 @@ map <C-N> <Plug>(miniyank-cycleback)
 " }}
 
 " Plugins configuration {{{
-hi ALEError guibg=124 ctermbg=124 gui=NONE cterm=NONE
+hi ALEError guibg=Red3 ctermbg=124 gui=NONE cterm=NONE
 
 let g:NERDTreeHighlightCursorline = 0
 let g:NERDTreeMouseMode = 3
