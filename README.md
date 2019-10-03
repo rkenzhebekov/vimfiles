@@ -10,7 +10,7 @@ My configuration uses [vim-plug](https://github.com/junegunn/vim-plug).
 
 ## Installation:
 
-Prerequisites: ruby, git.
+Prerequisites: ruby, git, FiraCode font.
 
 1. Move your existing configuration somewhere else:
    `mv ~/.vim* ~/.gvim* my_backup`
