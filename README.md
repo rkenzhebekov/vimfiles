@@ -18,6 +18,8 @@ Prerequisites: ruby, git, FiraCode font.
    `git clone https://github.com/rkenzhebekov/vimfiles ~/.vim`
 3. Go into ".vim" and run "rake":
    `cd ~/.vim && rake`
+4. Open vim and execute this command to install vim plugs:
+  `:PlugInstall`
 
 This will install a "~/.vimrc" symlink to the config inside the ".vim" directory.
 
@@ -47,3 +49,10 @@ This will install a "~/.vimrc" symlink to the config inside the ".vim" directory
 - Cursor keys for movement disabled!
 - Nice looking status line
 - Awesome configurations for Ag, Nerdtree and more..
+
+## If things goes wrong
+ - Lua is not enabled for VIM: 
+  ```bash
+  sudo apt-get purge vim
+  sudo apt-get install vim-gtk
+  ```

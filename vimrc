@@ -2,7 +2,6 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'Arkham/nvim-miniyank'
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'SirVer/ultisnips'
 Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'
@@ -55,9 +54,7 @@ set noswapfile                    " and swap files
 " Style
 set background=dark
 silent! color gruvbox
-colorscheme PaperColor
 set number                        " line numbers are cool
-set relativenumber                " relative numbers are cooler
 set ruler                         " show the cursor position all the time
 set nocursorline                  " disable cursor line
 set showcmd                       " display incomplete commands
@@ -126,7 +123,7 @@ if has("autocmd")
   " make sure all markdown files have the correct filetype set and setup wrapping
   augroup filetype_markdown
     au!
-    au FileType markdown setl tw=75
+    au FileType markdown setl tw=75 | syntax sync fromstart
     au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
   augroup END
 
@@ -299,12 +296,14 @@ map <C-N> <Plug>(miniyank-cycleback)
 " }}
 
 " Plugins configuration {{{
+" hi ALEError guibg=Red3 ctermbg=124 gui=NONE cterm=NONE
 hi ALEError guibg=Red3 ctermbg=124 gui=NONE cterm=NONE
 
 let g:NERDTreeHighlightCursorline = 0
 let g:NERDTreeMouseMode = 3
 let g:UltiSnipsSnippetsDir = $HOME."/.vim/UltiSnips"
 let g:ale_elixir_elixir_ls_release = $HOME."/code/elixir-ls/rel"
+let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters = { 'haskell': ['hlint', 'hdevtools'], 'elixir': ['elixir-ls'] }
 let g:fzf_layout = { 'down': '~30%' }
@@ -318,12 +317,14 @@ let g:haskell_indent_if = 3
 let g:haskell_indent_in = 1
 let g:haskell_indent_let = 4
 let g:haskell_indent_where = 6
+let g:hdevtools_stack = 1
 let g:lightline = { 'mode_fallback': { 'terminal': 'normal' } }
 let g:loaded_python_provider = 1
 let g:miniyank_filename = $HOME."/.vim/.miniyank.mpack"
 let g:mundo_right = 1
 let g:neoformat_enabled_ruby = []
 let g:neoformat_only_msg_on_error = 1
+let g:polyglot_disabled = ['json']
 let g:test#preserve_screen = 1
 let g:test#ruby#rspec#executable = "spring rspec"
 let g:test#strategy = "vimux"
