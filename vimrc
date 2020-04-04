@@ -31,6 +31,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-projectionist'
 Plug 'w0rp/ale'
 Plug 'zhaocai/GoldenView.Vim'
 
@@ -55,9 +56,9 @@ set noswapfile                    " and swap files
 " Style
 set background=dark
 silent! color gruvbox
-colorscheme PaperColor
+" colorscheme PaperColor
 set number                        " line numbers are cool
-set relativenumber                " relative numbers are cooler
+" set relativenumber                " relative numbers are cooler
 set ruler                         " show the cursor position all the time
 set nocursorline                  " disable cursor line
 set showcmd                       " display incomplete commands
