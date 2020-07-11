@@ -24,7 +24,8 @@ end
 
 desc %(Run Vim)
 task :vim do
-  sh "vim"
+  # sh "vim"
+  sh "vim +'PlugInstall --sync' +qa"
 end
 
 desc %(Check if MacVim is installed)
