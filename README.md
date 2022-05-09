@@ -13,9 +13,11 @@ My configuration uses [vim-plug](https://github.com/junegunn/vim-plug).
 Prerequisites: ruby, git, FiraCode font.
 
 0. Install neovim 
-   `sudo apt install neovim'
-   `mkdir -p ~/.config/nvim`
-   `touch ~/.config/nvim/init.vim`
+   ```bash
+    sudo apt install neovim
+    mkdir -p ~/.config/nvim
+    touch ~/.config/nvim/init.vim
+   ```
 
    Add following to the init.vim:
    ```
