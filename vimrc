@@ -269,12 +269,12 @@ nnoremap <Up>    :echo "no!"<CR>
 nnoremap <Down>  :echo "no!"<CR>
 
 " Fugitive
-nnoremap <Leader>gs  :Gstatus<CR>
-nnoremap <Leader>gd  :Gdiff<CR>
-nnoremap <Leader>gci :Gcommit<CR>
-nnoremap <Leader>gw  :Gwrite<CR>
-nnoremap <Leader>gr  :Gread<CR>
-nnoremap <Leader>gb  :Gblame<CR>
+nnoremap <Leader>gs  :Git<CR>
+nnoremap <Leader>gd  :Git diff<CR>
+nnoremap <Leader>gci :Git commit<CR>
+nnoremap <Leader>gw  :Git write<CR>
+nnoremap <Leader>gr  :Git read<CR>
+nnoremap <Leader>gb  :Git blame<CR>
 
 " Plugins mapping
 nnoremap <Leader>w :ALEDetail<CR>
@@ -328,6 +328,18 @@ let g:polyglot_disabled = ['json']
 let g:test#preserve_screen = 1
 let g:test#ruby#rspec#executable = "spring rspec"
 let g:test#strategy = "vimux"
+
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
+
+let g:fzf_action = {
+        \ 'ctrl-q': function('s:build_quickfix_list'),
+        \ 'ctrl-t': 'tab split',
+        \ 'ctrl-x': 'split',
+        \ 'ctrl-v': 'vsplit' }
 " }}}
 
 command! -bang -nargs=* Ag

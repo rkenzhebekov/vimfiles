@@ -12,6 +12,18 @@ My configuration uses [vim-plug](https://github.com/junegunn/vim-plug).
 
 Prerequisites: ruby, git, FiraCode font.
 
+0. Install neovim 
+   `sudo apt install neovim'
+   `mkdir -p ~/.config/nvim`
+   `touch ~/.config/nvim/init.vim`
+
+   Add following to the init.vim:
+   ```
+      set runtimepath^=~/.vim runtimepath+=~/.vim/after
+      let &packpath=&runtimepath
+      source ~/.vimrc
+   ```
+
 1. Move your existing configuration somewhere else:
    `mv ~/.vim* ~/.gvim* my_backup`
 2. Clone this repo into ".vim":
