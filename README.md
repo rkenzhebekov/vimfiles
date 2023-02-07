@@ -29,7 +29,7 @@ Prerequisites: ruby, git, FiraCode font.
 1. Move your existing configuration somewhere else:
    `mv ~/.vim* ~/.gvim* my_backup`
 2. Clone this repo into ".vim":
-   `git clone https://github.com/rkenzhebekov/vimfiles ~/.vim`
+   `git clone git@github.com:rkenzhebekov/vimfiles.git`
 3. Go into ".vim" and run "rake":
    `cd ~/.vim && rake`
 4. Open vim and execute this command to install vim plugs:
