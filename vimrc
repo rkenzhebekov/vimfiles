@@ -1,8 +1,38 @@
+let g:NERDTreeHighlightCursorline = 0
+let g:NERDTreeMouseMode = 3
+" let g:UltiSnipsSnippetsDir = $HOME."/.vim/UltiSnips"
+let g:ale_elixir_elixir_ls_release = $HOME."/code/elixir-ls/rel"
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_linters = { 'haskell': ['hlint', 'hdevtools'], 'elixir': ['elixir-ls'] }
+let g:fzf_layout = { 'down': '~30%' }
+let g:goldenview__enable_default_mapping = 0
+let g:haskell_indent_after_bare_where = 2
+let g:haskell_indent_before_where = 2
+let g:haskell_indent_case = 2
+let g:haskell_indent_case_alternative = 1
+let g:haskell_indent_do = 3
+let g:haskell_indent_if = 3
+let g:haskell_indent_in = 1
+let g:haskell_indent_let = 4
+let g:haskell_indent_where = 6
+let g:hdevtools_stack = 1
+let g:lightline = { 'mode_fallback': { 'terminal': 'normal' } }
+let g:loaded_python_provider = 1
+let g:miniyank_filename = $HOME."/.vim/.miniyank.mpack"
+let g:mundo_right = 1
+let g:neoformat_enabled_ruby = []
+let g:neoformat_only_msg_on_error = 1
+let g:polyglot_disabled = ['json']
+let g:test#preserve_screen = 1
+let g:test#ruby#rspec#executable = "spring rspec"
+let g:test#strategy = "vimux"
+
 " Plugins {{{
 call plug#begin('~/.vim/plugged')
 
 Plug 'Arkham/nvim-miniyank'
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 Plug 'benmills/vimux'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ervandew/supertab'
@@ -299,35 +329,6 @@ map <C-N> <Plug>(miniyank-cycleback)
 " hi ALEError guibg=Red3 ctermbg=124 gui=NONE cterm=NONE
 hi ALEError guibg=Red3 ctermbg=124 gui=NONE cterm=NONE
 
-let g:NERDTreeHighlightCursorline = 0
-let g:NERDTreeMouseMode = 3
-let g:UltiSnipsSnippetsDir = $HOME."/.vim/UltiSnips"
-let g:ale_elixir_elixir_ls_release = $HOME."/code/elixir-ls/rel"
-let g:ale_lint_on_insert_leave = 0
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_linters = { 'haskell': ['hlint', 'hdevtools'], 'elixir': ['elixir-ls'] }
-let g:fzf_layout = { 'down': '~30%' }
-let g:goldenview__enable_default_mapping = 0
-let g:haskell_indent_after_bare_where = 2
-let g:haskell_indent_before_where = 2
-let g:haskell_indent_case = 2
-let g:haskell_indent_case_alternative = 1
-let g:haskell_indent_do = 3
-let g:haskell_indent_if = 3
-let g:haskell_indent_in = 1
-let g:haskell_indent_let = 4
-let g:haskell_indent_where = 6
-let g:hdevtools_stack = 1
-let g:lightline = { 'mode_fallback': { 'terminal': 'normal' } }
-let g:loaded_python_provider = 1
-let g:miniyank_filename = $HOME."/.vim/.miniyank.mpack"
-let g:mundo_right = 1
-let g:neoformat_enabled_ruby = []
-let g:neoformat_only_msg_on_error = 1
-let g:polyglot_disabled = ['json']
-let g:test#preserve_screen = 1
-let g:test#ruby#rspec#executable = "spring rspec"
-let g:test#strategy = "vimux"
 
 function! s:build_quickfix_list(lines)
   call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
