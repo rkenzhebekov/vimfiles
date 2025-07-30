@@ -21,6 +21,7 @@ let g:lightline = { 'mode_fallback': { 'terminal': 'normal' } }
 let g:loaded_python_provider = 1
 let g:miniyank_filename = $HOME."/.vim/.miniyank.mpack"
 let g:mundo_right = 1
+let g:neoformat_enabled_json = []
 let g:neoformat_enabled_ruby = []
 let g:neoformat_only_msg_on_error = 1
 let g:polyglot_disabled = ['json']
@@ -74,7 +75,7 @@ set nocompatible                  " nocompatible is good for humans
 syntax enable                     " enable syntax highlighting...
 filetype plugin indent on         " depending on filetypes...
 runtime macros/matchit.vim        " with advanced matching capabilities
-set pastetoggle=<F12>             " for pasting code into Vim
+" set pastetoggle=<F12>             " for pasting code into Vim
 set timeout tm=1000 ttm=10        " fix slight delay after pressing Esc then O
 set autoread                      " auto load files if vim detects change
 set autowrite                     " auto write files when moving around
